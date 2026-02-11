@@ -1,4 +1,4 @@
-### DOCKER DEEP DIVE
+# DOCKER DEEP DIVE
 
 ## Introduction
 
@@ -11,7 +11,7 @@ Before Docker, developers faced many issues:
 - Production failures 
 Docker was introduced to solve these problems.
 
-# Problem 1:
+### Problem 1:
 One of the most common problems in software development was:
 - The application works on the developers system but fails on the testing or production server.
 This happened because:
@@ -21,7 +21,7 @@ This happened because:
 - Missing system dependencies
 Even a small version difference could break the application
 
-# Problem 2:
+### Problem 2:
 Dependency Conflicts
 Application require specific versions of:
 - Programming languages (Node.js, Python, Java)
@@ -30,7 +30,7 @@ Application require specific versions of:
 - System packages
 Managing multiple versions manually was complex and risky.
 
-# Problem 3:
+### Problem 3:
 Before Docker, the main solution was Virtual Machines (VMs).
 VMs required:
 - A full Operating System
@@ -58,11 +58,11 @@ This makes containers:
 
 Docker solves the problem of inconsistent environments and dependency conflicts by packaging applications and their dependencies into lightweight, portable containers.
 
-## Virtual Machines vs Docker Containers
+# Virtual Machines vs Docker Containers
 
 Before Docker, applications were mostly deployed using Virtual Machines (VMs). Docker introduced containers as a lightweight alternative.
 
-# What is Virtual Machine?
+### What is Virtual Machine?
 A Virtual Machine is a software-based emulation of a physical computer.
 
 VMs run on a hypervisor like:
@@ -75,7 +75,7 @@ Each Virtual Machine contains:
 - Required Applications
 - Virtual hardware
 
-# What is Docker?
+### What is Docker?
 Docker is a containerization platform that runs applications inside lightweight containers.
 
 Containers include:
@@ -84,7 +84,7 @@ Containers include:
 - Runtime
 But they share the host operating system kernel.
 
-# Differences Between Virtual Machine vs Docker Container
+## Differences Between Virtual Machine vs Docker Container
 
 | Feature        | Virtual Machine           | Docker Container        |
 |================| ========================= |======================== |
@@ -95,11 +95,11 @@ But they share the host operating system kernel.
 | Performance    | Slower (extra OS layer)   | Near-native performance |
 | Isolation      | Strong (hardware-level)   | Process-level isolation |
 
-## Understanding Virtual Machine Architecture and Docker Architecture
+# Understanding Virtual Machine Architecture and Docker Architecture
 
 ![ARCHITECTURE] (Architecture.jpg)
 
-# Virtual Machine Architecture
+## Virtual Machine Architecture
 
 1. Physical Hardware:
 - CPU
@@ -127,10 +127,10 @@ Inside each VM:
 - Runtime
 - Application
 
-# Why VMs are Heavy:
+### Why VMs are Heavy:
 Each VM has OS, System Processes, Drivers. So, they use large size (GBs), High RAM usage and Slower startup.
 
-# Docker Architecture
+## Docker Architecture
 
 1. Physical Hardware:
 Same as VM - CPU, RAM, Storage
@@ -159,10 +159,10 @@ They do not include:
 - Full operating system
 - Separate kernel
 
-# Why Docker is Lightweight:
+### Why Docker is Lightweight:
 Because containers share the kernel it uses smaller size (MBs), Faster startup in seconds, Better performance.
 
-## What Gets Installed When Docker is Installed?
+# What Gets Installed When Docker is Installed?
 
 When Docker is installed, it sets up multiple components that work together to create and manage containers.
 The main component installed is:
@@ -249,7 +249,7 @@ So internally:
 - Docker Engine
 - Containers
 
-## What is Dockerfile?
+# What is Dockerfile?
 
 A Dockerfile is a text file that contains a set of instructions used to build a Docker Image.
 
@@ -260,7 +260,7 @@ It defines:
 - Environment configuration
 - Startup command
 
-# Dockerfile Instructions
+### Dockerfile Instructions
 A Dockerfile is made of instructions. Each instruction creates a new image layer.
 
 1. FROM: Refers to the base OS of the image
@@ -278,7 +278,7 @@ A Dockerfile is made of instructions. Each instruction creates a new image layer
 
 ---
 
-# Sample Dockerfile:
+## Sample Dockerfile:
 
 #Uses official Nodejs image#
 FROM node:18-alpine
@@ -397,7 +397,7 @@ docker image prune
 - Remove Everything Unused:
 docker system prune
 
-## Docker Networking
+# Docker Networking
 Docker Networking is the system that allows Docker containers to communicate. 
 It helps:
 - Containers to talk to each other
@@ -452,19 +452,19 @@ Without port mapping (-p), the container cannot be accessed from outside.
 - Used in multi-server setup
 - Used in Docker Swarm or Kubernetes
 
-### Volumes and Persistence
+# Volumes and Persistence
 
 By default, Docker containers are temporary. This means if you delete a container all the data inside it is also deleted.
 
-# What is Persistence?
+### What is Persistence?
 
 Persistence means: Data should stay safe even if the container is deleted.
 
-# What is a Volume?
+### What is a Volume?
 A volume is a special storage area created by Docker. It stores data outside the container.
 Even if the container is removed, the data inside the volume remains safe.
 
-# How to Create a Volume
+### How to Create a Volume
 
 Create a volume:
 docker volume create myvolume
@@ -486,7 +486,7 @@ Volumes are mainly used for:
 - Application logs
 - Any important data
 
-## Docker Compose
+# Docker Compose
 
 Docker Compose is a tool used to manage multiple containers together.
 
@@ -495,7 +495,7 @@ docker-compose.yml
 And start everything using:
 docker compose up
 
-# How Docker Compose Works
+### How Docker Compose Works
 We define services in a YAML file.
 example:
 
