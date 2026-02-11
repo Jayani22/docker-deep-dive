@@ -87,13 +87,14 @@ But they share the host operating system kernel.
 ## Differences Between Virtual Machine vs Docker Container
 
 | Feature        | Virtual Machine           | Docker Container        |
-|================| ========================= |======================== |
-| OS             | Each VM has full Guest OS | Shares Host OS          |
-| Size           | Large (GBs)               | Small (MBs)             |
-| Startup Time   | Slow (minutes)            | Fast (seconds)          |
-| Resource Usage | High                      | Low                     |
-| Performance    | Slower (extra OS layer)   | Near-native performance |
-| Isolation      | Strong (hardware-level)   | Process-level isolation |
+|---------------|---------------------------|-------------------------|
+| OS            | Each VM has full Guest OS | Shares Host OS          |
+| Size          | Large (GBs)               | Small (MBs)             |
+| Startup Time  | Slow (minutes)            | Fast (seconds)          |
+| Resource Usage| High                      | Low                     |
+| Performance   | Slower (extra OS layer)   | Near-native performance |
+| Isolation     | Strong (hardware-level)   | Process-level isolation |
+
 
 # Understanding Virtual Machine Architecture and Docker Architecture
 
