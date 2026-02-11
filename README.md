@@ -98,7 +98,7 @@ But they share the host operating system kernel.
 
 # Understanding Virtual Machine Architecture and Docker Architecture
 
-![ARCHITECTURE] (Architecture.jpg)
+![ARCHITECTURE] (Architecture.png)
 
 ## Virtual Machine Architecture
 
